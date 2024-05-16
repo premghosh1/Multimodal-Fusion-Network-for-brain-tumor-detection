@@ -8,6 +8,7 @@ We aim to approach a three step process:
 1. Image Registeration
 2. Image Fusion
 3. Image Segmentation
+4. Cancer Detection
 
 ***
 
@@ -27,8 +28,9 @@ Select the appropriate CT and MRI Images. The registered MRI Image gets saved in
 
 ### Image Fusion
 
-**Architecture:**
-<img src='architecture/Image Fusion Process.png' />
+#### Architecture:
+
+![VGG-19](./architecture/Image_Fusion_Process.png)
 
 #### Transfer Learning
 Transfer learning is an optimization that allows rapid progress or improved performance when modeling the second task. We aim to use the **VGG-19 CNN** architecture with its pre-trained parameters which would help us to achieve our target. Visual Geometry Group (VGG-19) is a convolutional neural network that is trained on more than a million images from the ImageNet database. The network is 19 layers deep and can classify images into 1000 object categories.
@@ -69,16 +71,51 @@ In continuation to the above GUI approach the fused image gets saved in `static/
 
 ***
 
-#### Desktop Application
-Diagnostic tools include **Computed tomography (CT)** and **Magnetic resonance imaging (MRI)** and thus these are the two modalities that we will consider for Image Fusion Process. 
-We aim to approach a three step process:
-1. Image Registeration
-2. Image Fusion
-3. Image Segmentation
+### Cancer Detection
+
+#### ResNet50 Neural Network Architecture
+
+![ResNet50](./architecture/ResNet50_architecture.png)
+
+#### Dataset
+
+We have used [brain tumor dataset](https://github.com/MorvanLi/image-fusion-zoom/tree/main/Medical_Image_Fusion_Methods/Havard-Medical-Image-Fusion-Datasets/CT-MRI) posted by **MorvanLi** on [github.com](github.com).
+
+This brain tumor dataset containing 3064 T1-weighted contrast-inhanced images from 233 patients with three kinds of brain tumor: meningioma (708 slices), glioma (1426 slices), and pituitary tumor (930 slices).
+
+#### Modules
+
+* [brain_tumor_dataset_preparation.ipynb](brain_tumor_dataset_preparation.ipynb) - An IPython notebook that contains preparation and preprocessing of dataset for training, validation and testing.
+
+* [torch_brain_tumor_classifier.ipynb](torch_brain_tumor_classifier.ipynb) - An IPython notebook that contains all the steps, processes and results of training, validating and testing our brain tumor classifier.
+
+* [app.py](app.py) - A python script which accepts path to an image as input, which then classifies the image into one of the three classes.
 
 ***
+
+## Screenshots (Results & Web Interface)
+
+### Web Interface
+
+#### Home Page
+
+![Home Page](./architecture/Home_Page.png)
+
+#### Other pages
+
+![Coordinate Registration Process](./architecture/Coordinate_registration.png)
+
+![Registration Confirmation](./architecture/Registered_images.png)
+
+![Fused Image](./architecture/fused_image.png)
+
+#### Detection Page
+
+![Detection](./architecture/detection.png)
+
+***
+
 #### Contributors
 * [Prem Ghosh](https://github.com/premghosh1)
 * [Vansh Dhingra](https://github.com/VanshDhingra02)
-* [Suryansh Mallick](https://github.com/)
 

@@ -16,33 +16,28 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 content">
                 <div class="jumbotron">
-                    <h1 class="display-4">Image Segmentation</h1>
+                    <h1 class="display-4">Cancer Detection Process</h1>
                     <p class="lead">
-                        A watershed is a transformation defined on a grayscale image. The watershed transformation treats the image it operates upon like a topographic map, with the brightness of each point
-                        representing its height, and finds the lines that run along the tops of ridges.
+                        ResNet-50 is a 50-layer convolutional neural network (48 convolutional layers, one MaxPool layer,
+                        and one average pool layer). Residual neural networks are a type of artificial neural network
+                        (ANN) that forms networks by stacking residual blocks.
+                        We aim to detect brain tumour using the ResNet-50 CNN architecture trained with our parameters
+                        which would help us to achieve our target of 99.3% accuracy.
                     </p>
                 </div>
-                <h3 class="heading">The Image Formed On Segmentation</h3>
+                <h3 class="heading">The Identified Image</h3>
                 <center>
                     <img src="{{ url_for('static',filename='segmented.jpg') }}" id="fusion" alt="Fused Image"
                         class="fusion" style="border:2px solid #87857f;padding:15px; border-radius:10px;">
+                    <div>
+                        <input type="text" id="cancerType" readonly="readonly" value="{{cancerType}}"
+                            style="margin-top: 20px; width: 300px; padding: 10px; text-align: center; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
                 </center>
 
-            </div>
-        </div>
-
-
-        <div class="row" style="margin-bottom: 40px;">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <center>
-                    <form action="{{ url_for('get_cancer_type') }}" method="GET">
-                        <input type="submit" value="Do Cancer Identification" class="btn btn-primary">
-                    </form>
-                </center>
             </div>
         </div>
     </div>
-
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -54,6 +49,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
