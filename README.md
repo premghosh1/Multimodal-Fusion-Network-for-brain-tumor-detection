@@ -114,6 +114,11 @@ This brain tumor dataset containing 3064 T1-weighted contrast-inhanced images fr
 ![Detection](./architecture/detection.png)
 
 ***
+# Note:- 
+Please download the cancer detection model from [bt_resnet50_model.pt](https://drive.google.com/file/d/1iu-92R5QIyzRIlNyMAuDCCbSHk8eXnrw/view?usp=sharing) 
+and place it in models folder in the root directory before running the app.
+
+***
 
 #### Contributors
 * [Prem Ghosh](https://github.com/premghosh1)
